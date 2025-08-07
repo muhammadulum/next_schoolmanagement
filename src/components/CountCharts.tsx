@@ -24,7 +24,7 @@ const data = [
 
 
 const style = {
-    top: '0%',
+    bottom: '0%',
     right: 0,
     transform: 'translate(0, -50%)',
     lineHeight: '24px',
@@ -39,19 +39,19 @@ const CountCharts = () => {
             {/* title */}
             <div className='flex justify-between items-center'>
                 <h1 className='text-lg font-semibold'>Students</h1>
-                <Image src="/more.png" alt="" width={20} height={20} />
+                <Image src="/moreDark.png" alt="" width={20} height={20} className='' />
             </div>
             {/* chart */}
-            <div className='relative w-full h-full'>
-                <ResponsiveContainer width="100%" height="100%">
+            <div className='relative w-full h-[75%]'>
+                <ResponsiveContainer>
                     <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={32} data={data}>
                         <RadialBar
 
-                            label={{ position: 'insideStart', fill: '#fff' }}
+                            // label={{ position: 'insideStart', fill: '#fff' }}
                             background
                             dataKey="count"
                         />
-                        <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+                        {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} /> */}
 
                     </RadialBarChart>
                 </ResponsiveContainer>
@@ -59,17 +59,13 @@ const CountCharts = () => {
 
             </div>
             {/* bottom */}
-            <div className='flex justify-center gap-16 mt-4 bg-lamaPurpleLight'>
-
-                <div className='flex flex-col gap-1 items-center'>
-                    <div className='w-5 h-5 bg-lamaSky rounded-full'></div>
+            <div className='flex justify-center gap-16 mt-4'>
+                <div className='flex flex-col gap-1'>
+                    <div className='w-5 h-5 bg-lamaSky rounded-full' />
                     <h1 className='font-bold'>1.234</h1>
                     <h2 className='text-xs text-gray-300'>Boys (55%)</h2>
-
                 </div>
-
-
-                <div className='flex flex-col gap-1 items-center'>
+                <div className='flex flex-col gap-1'>
                     <div className='w-5 h-5 bg-lamaYellow rounded-full'></div>
                     <h1 className='font-bold'>1.234</h1>
                     <h2 className='text-xs text-gray-300'>Girl (55%)</h2>
