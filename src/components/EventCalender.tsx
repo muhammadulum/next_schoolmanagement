@@ -4,6 +4,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import Image from "next/image";
+// import "@/app/globals.css"
 
 type ValuePiece = Date | null;
 
@@ -18,18 +19,18 @@ const events = [
         descriptopm: "Lorem ipsum dolor sit amet, consctetur adipicing elit"
     },
     {
-        id: 1,
+        id: 2,
         title: "lorem ipsum dolor",
         time: "12:00 PM - 2:00 PM",
         descriptopm: "Lorem ipsum dolor sit amet, consctetur adipicing elit"
     }, {
-        id: 1,
+        id: 3,
         title: "lorem ipsum dolor",
         time: "12:00 PM - 2:00 PM",
         descriptopm: "Lorem ipsum dolor sit amet, consctetur adipicing elit"
     },
     {
-        id: 1,
+        id: 4,
         title: "lorem ipsum dolor",
         time: "12:00 PM - 2:00 PM",
         descriptopm: "Lorem ipsum dolor sit amet, consctetur adipicing elit"
@@ -54,10 +55,10 @@ const EventCalender = () => {
                     return (
                         <div className="p-5 rounded-md border-2 border-gray-100 border-t-4 odd:border-t-lamaSky even:border-t-lamaPurple" key={event.id}>
                             <div className="flex items-center justify-between">
-                                <h1>{event.title}</h1>
-                                <span>{event.time}</span>
-                                <p>{event.descriptopm}</p>
+                                <h1 className="font-semibold text-gray-600">{event.title}</h1>
+                                <span className="text-gray-400 text-sm">{event.time}</span>
                             </div>
+                            <p className="mt-2 text-gray-400 text-sm">{event.descriptopm}</p>
                         </div>)
                 })}
             </div>
